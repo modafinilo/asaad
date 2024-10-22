@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Caveat:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="contactostyle.css">
+    <title>Formulario de Contacto</title>
+</head>
+
+<body>
+
+    <header class="header">
+        <header class="header">
+            <a href="index.html" class="logo">
+                <img src="logoasaad.png" alt="inicio" width="100">
+            </a>
+            <nav class="menu">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="Contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+        </header>
+       
+    </header>
+<h1>Formulario de Contacto</h1>
+    <main>
+        
+        <form id="contactForm" class="contact-form">
+            <div class="form-group">
+                <label for="name">Nombre completo:</label>
+                <input type="text" id="name" name="name" placeholder="Ingresa tu nombre" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Correo electrónico:</label>
+                <input type="email" id="email" name="email" placeholder="Ingresa tu correo" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Teléfono:</label>
+                <input type="tel" id="phone" name="phone" placeholder="Ingresa tu número de teléfono" required>
+            </div>
+
+            <div class="form-group">
+                <label for="topic">Motivo del contacto:</label>
+                <select id="topic" name="topic" required>
+                    <option value="" disabled selected>Selecciona una opción</option>
+                    <option value="soporte">Obtener soporte</option>
+                    <option value="presupuesto">Solicitar presupuesto</option>
+                    <option value="vendedor">Contactar con un vendedor</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Mensaje:</label>
+                <textarea id="message" name="message" rows="5" placeholder="Escribe tu mensaje aquí"
+                    required></textarea>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="submit-btn">Enviar</button>
+            </div>
+        </form>
+
+        <div id="formMessage" class="form-message"></div>
+    </main>
+
+    <footer class="custom-footer">
+        <div class="footer-column">
+            <h3>Nosotros</h3>
+            <ul>
+                <li><a href="#">Quiénes somos</a></li>
+                <li><a href="#">Nuestro equipo</a></li>
+                <li><a href="blog.html">Noticias</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h3>Soporte</h3>
+            <ul>
+                <li><a href="#">Centro de ayuda</a></li>
+                <li><a href="Contacto.html">Contáctanos</a></li>
+                <li><a href="#">FAQ</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h3>Redes Sociales</h3>
+            <ul>
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Instagram</a></li>
+                <li><a href="#">Twitter</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="scriptcontacto.js"></script>
+</body>
+
+</html>
