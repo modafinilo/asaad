@@ -187,3 +187,7 @@ textarea,
         font-size: 24px;
     }
 }
+.menu a.active {
+    color: #017e84;
+    font-weight: bold;
+}

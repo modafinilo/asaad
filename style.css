@@ -7,7 +7,7 @@
 }
 
 body {
-display: flex;
+    display: flex;
     flex-direction: column;
     min-height: 100vh;
     background-color: #fffdfd;
@@ -127,55 +127,7 @@ display: flex;
     color: #333;
 }
 
-/* Sección del blog */
-.blog-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    padding: 40px 20px;
-}
-
-.blog-post {
-    background-color: #ffffff;
-    border-radius: 15px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    transition: transform 0.3s;
-    text-align: center;
-}
-
-.blog-post:hover {
-    transform: scale(1.02);
-}
-
-.blog-post img {
-    width: 100%;
-    height: auto;
-    border-bottom: 3px solid #017e84;
-}
-
-.blog-post-content {
-    padding: 20px;
-}
-
-.blog-post h2 {
-    font-size: 24px;
-    color: #017e84;
-    margin-bottom: 10px;
-}
-
-.blog-post a {
-    text-decoration: none;
-    color: #017e84;
-    font-weight: bold;
-    transition: color 0.3s;
-}
-
-.blog-post a:hover {
-    color: #014d52;
-}
-
-/* Estilos de la calculadora */
+/* Calculadora de costos */
 .calculadora-container {
     max-width: 600px;
     margin: 0 auto;
@@ -253,10 +205,12 @@ input[type="checkbox"] {
 }
 
 /* Botones */
-.buttons {
+.buttons,
+.acciones-carrito {
     display: flex;
     justify-content: space-between;
     gap: 10px;
+    margin-top: 20px;
 }
 
 .btn-primary {
@@ -293,37 +247,119 @@ input[type="checkbox"] {
     transform: scale(1.05);
 }
 
-/* Resultados */
-.result-container {
-    margin-top: 20px;
-    width: 100%;
-    padding: 15px;
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+/* Blog */
+.blog-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 40px 20px;
 }
 
-.result-container h3 {
-    font-size: 18px;
+.blog-post {
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s;
+    text-align: center;
+}
+
+.blog-post:hover {
+    transform: scale(1.02);
+}
+
+.blog-post img {
+    width: 100%;
+    height: auto;
+    border-bottom: 3px solid #017e84;
+}
+
+.blog-post-content {
+    padding: 20px;
+}
+
+.blog-post h2 {
+    font-size: 24px;
     color: #017e84;
     margin-bottom: 10px;
 }
 
-.result-breakdown ul {
-    list-style: none;
-    padding: 0;
+.blog-post a {
+    text-decoration: none;
+    color: #017e84;
+    font-weight: bold;
+    transition: color 0.3s;
 }
 
-.result-breakdown ul li {
+.blog-post a:hover {
+    color: #014d52;
+}
+
+/* Productos y carrito */
+.carrito-seccion h2 {
+    padding-left: 20px;
+    }
+.productos-seccion{
+    padding-left: 20px;
+}
+.contenedor-productos,
+.contenedor-carrito {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.tarjeta-producto,
+.tarjeta-carrito {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 15px;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.tarjeta-producto img,
+.tarjeta-carrito img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.tarjeta-producto h3,
+.tarjeta-carrito h3 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.tarjeta-producto p,
+.tarjeta-carrito p {
     font-size: 14px;
-    color: #444;
-    margin-bottom: 5px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.boton-agregar,
+.boton-eliminar {
+    background-color: #017e84;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.boton-agregar:hover,
+.boton-eliminar:hover {
+    background-color: #014d52;
 }
 
 /* Footer */
-footer {
-    margin-top: 20px;
-}
 .custom-footer {
     background-color: #2c2c2c;
     color: white;
@@ -359,14 +395,13 @@ footer {
     text-decoration: none;
     color: #bdbdbd;
     font-size: 16px;
-    transition: color 0.3s;
 }
 
 .footer-column ul li a:hover {
     color: white;
 }
 
-/* Media queries */
+/* Media Queries */
 @media (max-width: 768px) {
     .header {
         flex-direction: column;
@@ -378,22 +413,18 @@ footer {
         align-items: center;
     }
 
-    .calculadora-container {
-        padding: 20px;
-        margin-bottom: 30px;
+    .index-container,
+    .blog-container,
+    .contenedor-productos,
+    .contenedor-carrito {
+        grid-template-columns: 1fr;
     }
-    .fondo-personalizado {
-         padding-top: 30px;
-         padding-bottom: 100px;
-         min-height: auto;
-   }
-   .result-container {
-       margin-top: 20px;
-       width: 100%;
-       
-   }
-}
 
+    .acciones-carrito {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
 main {
     flex: 1;
     padding-bottom: 50px;
